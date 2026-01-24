@@ -1,0 +1,10 @@
+version: '3'
+
+tasks:
+  up:
+    cmds:
+    - bash utils/bootstrap.sh
+
+  down:
+    cmds:
+    - bash utils/uninstall.sh
