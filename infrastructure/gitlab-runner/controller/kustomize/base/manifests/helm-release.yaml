@@ -17,3 +17,6 @@ spec:
   - kind: ConfigMap
     name: gitlab-runner-values
     valuesKey: values.yaml
+  - kind: Secret
+    name: gitlab-runner-values
+    valuesKey: values.yaml
