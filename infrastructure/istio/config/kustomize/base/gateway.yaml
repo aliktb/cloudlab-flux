@@ -1,0 +1,16 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  annotations:
+    load-balancer.hetzner.cloud/name: "istio-gateway"
+  name: external-gateway
+spec:
+  gatewayClassName: istio
+  listeners:
+  - allowedRoutes:
+      namespaces:
+        from: All
+    hostname: "*.aliktb.com"
+    name: http
+    port: 80
+    protocol: HTTP
