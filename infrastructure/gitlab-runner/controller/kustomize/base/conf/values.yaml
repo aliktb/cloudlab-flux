@@ -1,0 +1,5 @@
+gitlabUrl: https://gitlab.com/
+rbac:
+  create: create
+serviceAccount:
+  create: true

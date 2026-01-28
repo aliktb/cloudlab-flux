@@ -13,3 +13,7 @@ spec:
         namespace: gitlab
       version: '0.85.x'
   interval: 30m
+  valuesFrom:
+  - kind: ConfigMap
+    name: gitlab-runner-values
+    valuesKey: values.yaml
