@@ -1,0 +1,6 @@
+kubeControllerManager:
+  enabled: false
+kubeProxy:
+  enabled: false
+kubeScheduler:
+  enabled: false

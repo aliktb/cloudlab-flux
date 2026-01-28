@@ -13,3 +13,7 @@ spec:
         namespace: monitoring
       version: '81.2.x'
   interval: 30m
+  valuesFrom:
+  - kind: ConfigMap
+    name: kube-prometheus-stack-values
+    valuesKey: values.yaml
