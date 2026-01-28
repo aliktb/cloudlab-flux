@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: gitlab-runner
+spec:
+  chart:
+    spec:
+      chart: gitlab-runner
+      interval: 12h
+      sourceRef:
+        kind: HelmRepository
+        name: gitlab
+        namespace: gitlab
+      version: '0.85.x'
+  interval: 30m
