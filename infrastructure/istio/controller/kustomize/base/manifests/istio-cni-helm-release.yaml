@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: istio-cni
+  labels:
+    app.kubernetes.io/part-of: istio
+spec:
+  chart:
+    spec:
+      chart: cni
+      interval: 12h
+      sourceRef:
+        kind: HelmRepository
+        name: istio
+        namespace: istio-system
+      version: "1.28.x"
+  dependsOn:
+  - name: istiod
+  interval: 1h0m0s
+  values:
+    cni:
+      chained: true
+      seLinuxOptions:
+        type: spc_t
+    profile: ambient
