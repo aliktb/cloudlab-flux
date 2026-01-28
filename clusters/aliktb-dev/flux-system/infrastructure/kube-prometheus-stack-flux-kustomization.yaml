@@ -4,6 +4,8 @@ metadata:
   name: kube-prometheus-stack
   namespace: flux-system
 spec:
+  dependsOn:
+  - name: external-secrets-operator-config
   interval: 5m
   path: "./infrastructure/kube-prometheus-stack/controller/kustomize/dev"
   prune: true

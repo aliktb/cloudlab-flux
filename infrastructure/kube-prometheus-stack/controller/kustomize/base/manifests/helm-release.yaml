@@ -17,3 +17,7 @@ spec:
   - kind: ConfigMap
     name: kube-prometheus-stack-values
     valuesKey: values.yaml
+  - kind: Secret
+    name: alertmanager-discord-webhook
+    valuesKey: discord-webhook-url
+    targetPath: alertmanager.config.receivers[0].slack_configs[0].api_url
