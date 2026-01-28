@@ -4,3 +4,4 @@ resources:
 - external-secrets-operator-controller-flux-kustomization.yaml
 - external-secrets-operator-config-flux-kustomization.yaml
 - gitlab-runner-controller-flux-kustomization.yaml
+- kube-prometheus-stack-flux-kustomization.yaml
