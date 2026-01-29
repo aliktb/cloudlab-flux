@@ -1,0 +1,26 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: scaleway-certmanager-dns-webhook
+spec:
+  chart:
+    spec:
+      chart: scaleway-certmanager-webhook
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: scaleway
+        namespace: cert-manager
+      version: "0.4.x"
+  interval: 1h0m0s
+  valuesFrom:
+  - kind: Secret
+    name: scaleway-dns-api-keys
+    targetPath: secret.accessKey
+    valuesKey: SCW_ACCESS_KEY
+    optional: false
+  - kind: Secret
+    name: scaleway-dns-api-keys
+    targetPath: secret.secretKey
+    valuesKey: SCW_SECRET_KEY
+    optional: false
