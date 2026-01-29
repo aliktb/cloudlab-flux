@@ -1,16 +1,13 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: istio-config
+  name: cert-manager-config
   namespace: flux-system
 spec:
   dependsOn:
-  - name: cert-manager-config
-  - name: external-dns-controller
   - name: istio-controller
-  - name: scaleway-certmanager-dns-webhook
   interval: 5m
-  path: "./infrastructure/istio/config/kustomize/dev"
+  path: "./infrastructure/cert-manager/config/kustomize/dev"
   prune: true
   sourceRef:
     kind: GitRepository
