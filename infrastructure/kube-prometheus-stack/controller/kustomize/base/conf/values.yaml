@@ -30,6 +30,12 @@ alertmanager:
           {{ end }}
     - name: 'null'
   enabled: true
+  ingress:
+    enabled: true
+    ingressClassName: tailscale
+    tls:
+    - hosts:
+      - alertmanager
 grafana:
   enabled: true
   ingress:
