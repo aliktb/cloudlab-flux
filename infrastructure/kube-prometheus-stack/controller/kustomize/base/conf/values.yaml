@@ -1,4 +1,6 @@
 alertmanager:
+  alertmanagerSpec:
+   externalUrl: https://alertmanager.tail1316db.ts.net
   config:
     global:
       resolve_timeout: 5m
