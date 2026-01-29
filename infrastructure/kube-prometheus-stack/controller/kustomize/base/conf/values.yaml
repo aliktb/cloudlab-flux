@@ -52,3 +52,11 @@ kubeProxy:
   enabled: false
 kubeScheduler:
   enabled: false
+prometheus:
+  enabled: true
+  ingress:
+    enabled: true
+    ingressClassName: tailscale
+    tls:
+    - hosts:
+      - prometheus
