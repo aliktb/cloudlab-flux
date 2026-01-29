@@ -30,6 +30,14 @@ alertmanager:
           {{ end }}
     - name: 'null'
   enabled: true
+grafana:
+  enabled: true
+  ingress:
+    enabled: true
+    ingressClassName: tailscale
+    tls:
+    - hosts:
+      - grafana
 kubeControllerManager:
   enabled: false
 kubeProxy:
