@@ -9,3 +9,4 @@ resources:
 - istio-config-flux-kustomization.yaml
 - external-dns-controller-flux-kustomization.yaml
 - cert-manager-controller-flux-kustomization.yaml
+- scaleway-dns-webhook-controller-flux-kustomization.yaml
