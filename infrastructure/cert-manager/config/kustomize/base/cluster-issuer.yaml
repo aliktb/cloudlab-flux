@@ -14,3 +14,9 @@ spec:
         webhook:
           groupName: acme.scaleway.com
           solverName: scaleway
+    - http01:
+        gatewayHTTPRoute:
+          parentRefs:
+          - kind: Gateway
+            name: external-gateway
+            namespace: istio-external
