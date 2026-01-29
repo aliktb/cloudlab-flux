@@ -1,0 +1,11 @@
+annotationFilter: external-dns/enabled=true
+domainFilters: ["aliktb.com"]
+env:
+- name: SCW_ACCESS_KEY
+- name: SCW_SECRET_KEY
+fullnameOverride: external-dns-scaleway
+provider:
+  name: scaleway
+sources: ["gateway-httproute"]
+txtOwnerId: default
+txtSuffix: ".k8s"

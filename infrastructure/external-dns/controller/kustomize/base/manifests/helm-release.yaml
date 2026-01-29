@@ -13,3 +13,14 @@ spec:
         name: external-dns
         namespace: external-dns
       interval: 12h
+  valuesFrom:
+  - name: external-dns-config
+    kind: ConfigMap
+  - kind: Secret
+    name: scaleway-dns-api-keys
+    valuesKey: SCW_ACCESS_KEY
+    targetPath: env[0].value
+  - kind: Secret
+    name: scaleway-dns-api-keys
+    valuesKey: SCW_SECRET_KEY
+    targetPath: env[1].value
