@@ -8,3 +8,4 @@ resources:
 - istio-controller-flux-kustomization.yaml
 - istio-config-flux-kustomization.yaml
 - external-dns-controller-flux-kustomization.yaml
+- cert-manager-controller-flux-kustomization.yaml
