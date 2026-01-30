@@ -21,9 +21,13 @@ cp .env.scaleway.example .env.scaleway
 
 Populate this gitignored env file with the access key pair and save it
 
-### Install FluxCD
+### Install FluxCD Operator
 
-Configure a `.envrc` with the contents from [.envrc.sample](.envrc.sample) to
-allow FluxCD to read/write to the GitHub repo
+Configure a `.env.github` with a GitHub PAT as the password to allow the FluxCD
+Operator to read/write to the GitHub repo:
+
+```cp
+.env.github.example .env.github
+```
 
 Next, run `task up` to bootstrap the cluster with FluxCD

@@ -1,0 +1,28 @@
+apiVersion: fluxcd.controlplane.io/v1
+kind: FluxInstance
+metadata:
+  name: flux
+  namespace: flux-system
+spec:
+  cluster:
+    domain: "cluster.local"
+    multitenant: false
+    networkPolicy: true
+    size: medium
+    type: kubernetes
+  components:
+  - helm-controller
+  - kustomize-controller
+  - notification-controller
+  - source-controller
+  - source-watcher
+  distribution:
+    artifact: "oci://ghcr.io/controlplaneio-fluxcd/flux-operator-manifests"
+    registry: "ghcr.io/fluxcd"
+    version: "2.x"
+  sync:
+    kind: GitRepository
+    path: "clusters/aliktb-dev"
+    pullSecret: "github-token"
+    ref: "refs/heads/initial-config"
+    url: "https://github.com/aliktb/cloudlab-flux"

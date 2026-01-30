@@ -11,12 +11,9 @@
 kubectl create namespace external-secrets
 kubectl create secret -n external-secrets generic scaleway-eso-credentials --from-env-file=.env.scaleway
 
+# Create secret to allow Flux Operator to pull git repo
+kubectl create namespace flux-system
+kubectl -n flux-system create secret generic github-token --from-env-file=.env.github
 
-# Bootstrap cluster with Flux CLI
-flux bootstrap github \
-  --token-auth \
-  --owner=aliktb \
-  --repository=cloudlab-flux \
-  --branch=initial-config \
-  --path=clusters/aliktb-dev \
-  --personal
+# Bootstrap Flux Operator
+flux-operator install -f flux-instance.yaml
