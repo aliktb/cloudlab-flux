@@ -32,12 +32,6 @@ alertmanager:
           {{ end }}
     - name: 'null'
   enabled: true
-  ingress:
-    enabled: true
-    ingressClassName: tailscale
-    tls:
-    - hosts:
-      - alertmanager
   route:
     main:
       annotations:
@@ -55,12 +49,6 @@ alertmanager:
         sectionName: https
 grafana:
   enabled: true
-  ingress:
-    enabled: true
-    ingressClassName: tailscale
-    tls:
-    - hosts:
-      - grafana
   route:
     main:
       annotations:
@@ -84,12 +72,6 @@ kubeScheduler:
   enabled: false
 prometheus:
   enabled: true
-  ingress:
-    enabled: true
-    ingressClassName: tailscale
-    tls:
-    - hosts:
-      - prometheus
   route:
     main:
       annotations:
