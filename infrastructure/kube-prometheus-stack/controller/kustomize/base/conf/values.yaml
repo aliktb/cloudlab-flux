@@ -38,6 +38,21 @@ alertmanager:
     tls:
     - hosts:
       - alertmanager
+  route:
+    main:
+      annotations:
+        external-dns/enabled: "true"
+      apiVersion: gateway.networking.k8s.io/v1
+      enabled: true
+      hostnames:
+      - alertmanager.dev.internal.aliktb.com
+      kind: HTTPRoute
+      parentRefs:
+      - group: gateway.networking.k8s.io
+        kind: Gateway
+        name: internal-gateway
+        namespace: istio-internal
+        sectionName: https
 grafana:
   enabled: true
   ingress:
@@ -46,6 +61,21 @@ grafana:
     tls:
     - hosts:
       - grafana
+  route:
+    main:
+      annotations:
+        external-dns/enabled: "true"
+      apiVersion: gateway.networking.k8s.io/v1
+      enabled: true
+      hostnames:
+      - grafana.dev.internal.aliktb.com
+      kind: HTTPRoute
+      parentRefs:
+      - group: gateway.networking.k8s.io
+        kind: Gateway
+        name: internal-gateway
+        namespace: istio-internal
+        sectionName: https
 kubeControllerManager:
   enabled: false
 kubeProxy:
@@ -60,3 +90,18 @@ prometheus:
     tls:
     - hosts:
       - prometheus
+  route:
+    main:
+      annotations:
+        external-dns/enabled: "true"
+      apiVersion: gateway.networking.k8s.io/v1
+      enabled: true
+      hostnames:
+      - prometheus.dev.internal.aliktb.com
+      kind: HTTPRoute
+      parentRefs:
+      - group: gateway.networking.k8s.io
+        kind: Gateway
+        name: internal-gateway
+        namespace: istio-internal
+        sectionName: https
