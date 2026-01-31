@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - gateway.yaml
 - namespace.yaml
+- http-tls-redirect-route.yaml
