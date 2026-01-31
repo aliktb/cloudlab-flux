@@ -4,3 +4,4 @@ namespace: kiali
 resources:
 - namespace.yaml
 - kiali.yaml
+- http-route.yaml

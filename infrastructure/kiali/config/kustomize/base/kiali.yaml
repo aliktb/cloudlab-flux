@@ -5,6 +5,9 @@ metadata:
 spec:
   auth:
     strategy: anonymous
+  deployment:
+    network_policy:
+      enabled: false
   external_services:
     grafana:
       enabled: true
@@ -12,3 +15,6 @@ spec:
       internal_url: "http://kube-prometheus-stack-grafana.monitoring"
     prometheus:
       url: http://kube-prometheus-stack-prometheus.monitoring:9090
+  server:
+    web_fqdn: kiali.dev.internal.aliktb.com
+    web_schema: https
