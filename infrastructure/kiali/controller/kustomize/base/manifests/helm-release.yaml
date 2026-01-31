@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kiali-operator
+spec:
+  chart:
+    spec:
+      chart: kiali-operator
+      interval: 12h
+      sourceRef:
+        kind: HelmRepository
+        name: kiali
+        namespace: kiali-operator
+      version: "2.20.x"
+  interval: 30m
