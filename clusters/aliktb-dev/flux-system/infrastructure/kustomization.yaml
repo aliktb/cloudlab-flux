@@ -12,3 +12,4 @@ resources:
 - cert-manager-config-flux-kustomization.yaml
 - istio-external-gateway-flux-kustomization.yaml
 - istio-internal-gateway-flux-kustomization.yaml
+- kiali-controller-flux-kustomization.yaml
