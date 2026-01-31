@@ -6,8 +6,8 @@ resources:
 - gitlab-runner-controller-flux-kustomization.yaml
 - kube-prometheus-stack-flux-kustomization.yaml
 - istio-controller-flux-kustomization.yaml
-- istio-config-flux-kustomization.yaml
 - external-dns-controller-flux-kustomization.yaml
 - cert-manager-controller-flux-kustomization.yaml
 - scaleway-dns-webhook-controller-flux-kustomization.yaml
 - cert-manager-config-flux-kustomization.yaml
+- istio-external-gateway-flux-kustomization.yaml
