@@ -72,6 +72,11 @@ kubeScheduler:
   enabled: false
 prometheus:
   enabled: true
+  prometheusSpec:
+    # Allow discovery of PodMonitors in ALL namespaces
+    podMonitorNamespaceSelector: {}
+    # Allow discovery of ServiceMonitors in ALL namespaces
+    serviceMonitorNamespaceSelector: {}
   route:
     main:
       annotations:
