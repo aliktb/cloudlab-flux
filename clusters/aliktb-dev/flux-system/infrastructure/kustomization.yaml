@@ -14,3 +14,4 @@ resources:
 - istio-internal-gateway-flux-kustomization.yaml
 - kiali-controller-flux-kustomization.yaml
 - kiali-config-flux-kustomization.yaml
+- istio-prometheus-monitors-flux-kustomization.yaml
