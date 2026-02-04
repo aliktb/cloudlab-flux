@@ -6,6 +6,6 @@ configMapGenerator:
 generatorOptions:
   disableNameSuffixHash: true
 kind: Kustomization
-namespace: istio-internal
+namespace: istio-internal-private
 resources:
 - manifests

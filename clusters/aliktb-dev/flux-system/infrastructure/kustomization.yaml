@@ -11,7 +11,7 @@ resources:
 - scaleway-dns-webhook-controller-flux-kustomization.yaml
 - cert-manager-config-flux-kustomization.yaml
 - istio-external-gateway-flux-kustomization.yaml
-- istio-internal-gateway-flux-kustomization.yaml
+- istio-internal-private-gateway-flux-kustomization.yaml
 - kiali-controller-flux-kustomization.yaml
 - kiali-config-flux-kustomization.yaml
 - istio-prometheus-monitors-flux-kustomization.yaml

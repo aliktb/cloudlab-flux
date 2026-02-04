@@ -8,11 +8,11 @@ spec:
   parentRefs:
   - group: gateway.networking.k8s.io
     kind: Gateway
-    name: internal-gateway
-    namespace: istio-internal
+    name: internal-private-gateway
+    namespace: istio-internal-private
     sectionName: https
   hostnames:
-  - kiali.dev.internal.aliktb.com
+  - kiali.dev.private.aliktb.com
   rules:
   - matches:
     - path:

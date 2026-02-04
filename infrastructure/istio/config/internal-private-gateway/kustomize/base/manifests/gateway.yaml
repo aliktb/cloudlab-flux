@@ -3,8 +3,8 @@ kind: Gateway
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    tailscale.com/hostname: istio-internal-gateway
-  name: internal-gateway
+    tailscale.com/hostname: istio-internal-private-gateway
+  name: internal-private-gateway
 spec:
   gatewayClassName: istio
   infrastructure:
@@ -16,14 +16,14 @@ spec:
   - allowedRoutes:
       namespaces:
         from: All
-    hostname: "*.dev.internal.aliktb.com"
+    hostname: "*.dev.private.aliktb.com"
     name: http
     port: 80
     protocol: HTTP
   - allowedRoutes:
       namespaces:
         from: All
-    hostname: "*.dev.internal.aliktb.com"
+    hostname: "*.dev.private.aliktb.com"
     name: https
     port: 443
     protocol: HTTPS

@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: istio-internal-gateway-config
+  name: istio-internal-private-gateway-config
   namespace: flux-system
 spec:
   dependsOn:
@@ -10,7 +10,7 @@ spec:
   - name: istio-controller
   - name: scaleway-certmanager-dns-webhook
   interval: 5m
-  path: "./infrastructure/istio/config/internal-gateway/kustomize/dev"
+  path: "./infrastructure/istio/config/internal-private-gateway/kustomize/dev"
   prune: true
   sourceRef:
     kind: GitRepository

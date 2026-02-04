@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   labels:
     istio.io/dataplane-mode: ambient
-  name: istio-internal
+  name: istio-internal-private

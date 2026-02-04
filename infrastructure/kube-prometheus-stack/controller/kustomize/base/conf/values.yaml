@@ -1,6 +1,6 @@
 alertmanager:
   alertmanagerSpec:
-   externalUrl: https://alertmanager.tail1316db.ts.net
+   externalUrl: https://alertmanager.dev.private.aliktb.com
   config:
     global:
       resolve_timeout: 5m
@@ -39,13 +39,13 @@ alertmanager:
       apiVersion: gateway.networking.k8s.io/v1
       enabled: true
       hostnames:
-      - alertmanager.dev.internal.aliktb.com
+      - alertmanager.dev.private.aliktb.com
       kind: HTTPRoute
       parentRefs:
       - group: gateway.networking.k8s.io
         kind: Gateway
-        name: internal-gateway
-        namespace: istio-internal
+        name: internal-private-gateway
+        namespace: istio-internal-private
         sectionName: https
 grafana:
   enabled: true
@@ -56,13 +56,13 @@ grafana:
       apiVersion: gateway.networking.k8s.io/v1
       enabled: true
       hostnames:
-      - grafana.dev.internal.aliktb.com
+      - grafana.dev.private.aliktb.com
       kind: HTTPRoute
       parentRefs:
       - group: gateway.networking.k8s.io
         kind: Gateway
-        name: internal-gateway
-        namespace: istio-internal
+        name: internal-private-gateway
+        namespace: istio-internal-private
         sectionName: https
 kubeControllerManager:
   enabled: false
@@ -84,11 +84,11 @@ prometheus:
       apiVersion: gateway.networking.k8s.io/v1
       enabled: true
       hostnames:
-      - prometheus.dev.internal.aliktb.com
+      - prometheus.dev.private.aliktb.com
       kind: HTTPRoute
       parentRefs:
       - group: gateway.networking.k8s.io
         kind: Gateway
-        name: internal-gateway
-        namespace: istio-internal
+        name: internal-private-gateway
+        namespace: istio-internal-private
         sectionName: https

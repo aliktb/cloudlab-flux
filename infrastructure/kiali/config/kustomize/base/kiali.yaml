@@ -16,5 +16,5 @@ spec:
     prometheus:
       url: http://kube-prometheus-stack-prometheus.monitoring:9090
   server:
-    web_fqdn: kiali.dev.internal.aliktb.com
+    web_fqdn: kiali.dev.private.aliktb.com
     web_schema: https
