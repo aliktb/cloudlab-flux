@@ -16,3 +16,4 @@ resources:
 - kiali-controller-flux-kustomization.yaml
 - kiali-config-flux-kustomization.yaml
 - istio-prometheus-monitors-flux-kustomization.yaml
+- alloy-flux-kustomization.yaml
