@@ -13,3 +13,7 @@ spec:
         namespace: monitoring
       version: '0.x'
   interval: 30m
+  valuesFrom:
+  - kind: ConfigMap
+    name: alloy-helm-config
+    valuesKey: values.yaml
