@@ -64,6 +64,18 @@ grafana:
         name: internal-private-gateway
         namespace: istio-internal-private
         sectionName: https
+  ## Configure additional grafana datasources (passed through tpl)
+  ## ref: https://grafana.com/docs/grafana/latest/administration/provisioning/#datasources
+  additionalDataSources:
+  - access: proxy
+    basicAuth: false
+    editable: false
+    isDefault: false
+    name: Loki
+    orgId: 1
+    type: loki
+    url: http://loki-gateway.monitoring.svc.cluster.local
+    version: 1
 kubeControllerManager:
   enabled: false
 kubeProxy:
