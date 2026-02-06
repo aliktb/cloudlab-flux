@@ -49,6 +49,12 @@ alertmanager:
         sectionName: https
 grafana:
   enabled: true
+  grafana.ini:
+    auth:
+      disable_login_form: true
+    auth.anonymous:
+      enabled: true
+      org_role: Admin
   route:
     main:
       annotations:
