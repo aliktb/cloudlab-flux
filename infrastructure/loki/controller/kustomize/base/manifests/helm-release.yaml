@@ -13,3 +13,7 @@ spec:
         namespace: monitoring
       version: '6.52.x'
   interval: 30m
+  valuesFrom:
+  - kind: ConfigMap
+    name: loki-config
+    valuesKey: values.yaml
