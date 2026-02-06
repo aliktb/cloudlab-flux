@@ -3,6 +3,13 @@ configMapGenerator:
 - files:
   - conf/values.yaml
   name: kube-prometheus-stack-values
+- files:
+  - conf/dashboards/logs.json
+  name: custom-dashboards
+  namespace: monitoring
+  options:
+    labels:
+      grafana_dashboard: "1"
 generatorOptions:
   disableNameSuffixHash: true
 kind: Kustomization
