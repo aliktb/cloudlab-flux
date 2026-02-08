@@ -8,6 +8,13 @@ alertmanager:
       group_interval: 10s
       repeat_interval: 12h
       receiver: 'discord'
+      routes:
+      - matchers:
+        - alertname = "InfoInhibitor"
+        receiver: 'null'
+      - matchers:
+        - alertname = "Watchdog"
+        receiver: 'null'
     receivers:
     - name: 'discord'
       slack_configs:
@@ -21,6 +28,7 @@ alertmanager:
           *Summary:* {{ .Annotations.summary }}
           *Description:* {{ .Annotations.description }}
           {{ end }}
+    - name: 'null'
   enabled: true
 kubeControllerManager:
   enabled: false
